@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>P-Ticket</title>
+    <link rel="shortcut icon" href="images/bus-icon.png" type="image/x-icon">
     <!-- Tailwind & Daisy Ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,8 +58,10 @@
     <main>
         <!-- Banner Section -->
         <section class="container mx-auto mt-3  px-3  lg:mt-12 font-raleway relative">
-            <div class="text-center space-y-4 bg-[url(images/banner.png)] bg-no-repeat bg-opacity-40 bg-cover p-14 lg:p-32  bg-bottom rounded-[40px]">
-                <h1 class="text-4xl lg:text-7xl font-extrabold text-white">End-to-End Travel with <br><span class="text-[#1DD100]">P Paribahan</span></h1>
+            <div
+                class="text-center space-y-4 bg-[url(images/banner.png)] bg-no-repeat bg-opacity-40 bg-cover p-14 lg:p-32  bg-bottom rounded-[40px]">
+                <h1 class="text-4xl lg:text-7xl font-extrabold text-white">End-to-End Travel with <br><span
+                        class="text-[#1DD100]">P Paribahan</span></h1>
                 <div class="flex justify-center items-center">
                     <p class="max-w-[650px] text-white pt-5 pb-5">Yes, you can run unit tests and view the results
                         directly within the app. The integrated testing
@@ -70,7 +73,8 @@
                     Tickets </button>
             </div>
 
-            <div class=" flex-row justify-center translate-x-[15%] lg:translate-x-0 md:flex-row lg:flex gap-4 space-y-4 lg:space-y-0 absolute lg:top-[90%] lg:left-[23%] ">
+            <div
+                class=" hidden lg:visible flex-row justify-center translate-x-[15%] lg:translate-x-0 md:flex-row lg:flex gap-4 space-y-4 lg:space-y-0 absolute lg:top-[90%] lg:left-[23%] ">
                 <!-- card1 -->
                 <div class="flex shadow-2xl p-6 rounded-xl space-x-3 bg-white">
                     <img src="images/people.png" alt="">
@@ -99,6 +103,64 @@
             </div>
 
 
+        </section>
+        <!-- Best Offer Section -->
+        <section class="container mx-auto mt-3  px-3  lg:mt-12 font-raleway text-center pt-15 lg:pt-28 ">
+            <h1 class="font-raleway text-[40px] font-bold">Best offers for you</h1>
+
+            <div class="flex-row space-y-2 lg:space-y-0 lg:flex justify-center gap-2 lg:gap-6 pt-6 lg:pt-12 ">
+                <!-- left Coupon -->
+                <div class="bg-[#FFBF0F] flex rounded-xl justify-center items-center pl-6 pr-6 text-left">
+                    <div>
+                        <!-- Things to do here -->
+                        <h1 class="font-inter text-4xl font-extrabold"><span id="">15</span>% OFF</h1>
+
+                        <p class="font-inter text-xl font-semibold">on your next purchase</p>
+                        <p>use by January 2024</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="220" viewBox="0 0 48 220" fill="none">
+                        <path
+                            d="M2.09815e-06 -3.81596e-07C1.82261e-06 3.15172 0.620775 6.27259 1.82689 9.1844C3.033 12.0962 4.80083 14.742 7.02943 16.9706C9.25804 19.1992 11.9038 20.967 14.8156 22.1731C17.7274 23.3792 20.8483 24 24 24C27.1517 24 30.2726 23.3792 33.1844 22.1731C36.0962 20.967 38.742 19.1992 40.9706 16.9706C43.1992 14.742 44.967 12.0962 46.1731 9.1844C47.3792 6.27259 48 3.15173 48 1.90735e-06L2.09815e-06 -3.81596e-07Z"
+                            fill="white" />
+                        <path
+                            d="M48 220C48 216.848 47.3792 213.727 46.1731 210.815C44.967 207.904 43.1992 205.258 40.9706 203.029C38.742 200.801 36.0962 199.033 33.1844 197.827C30.2726 196.621 27.1517 196 24 196C20.8483 196 17.7274 196.621 14.8156 197.827C11.9038 199.033 9.25804 200.801 7.02944 203.029C4.80083 205.258 3.033 207.904 1.82689 210.815C0.620778 213.727 -2.75532e-07 216.848 0 220L48 220Z"
+                            fill="white" />
+                        <line x1="25" y1="32" x2="25" y2="188" stroke="white" stroke-width="2" stroke-dasharray="5 5" />
+                    </svg>
+                    <div class="font-relway text-center">
+                        <!-- Things to do with coupon -->
+                        <h1 class="text-3xl font-bold " id="">NEW15</h1>
+                        <p>Coupon Code</p>
+                    </div>
+                </div>
+
+                <!-- Right Coupon -->
+                <div class="bg-[#F78C9C] flex rounded-xl justify-center items-center pl-6 pr-6 text-left">
+                    <div>
+                        <!-- Things to do here -->
+                        <h1 class="font-inter text-4xl font-extrabold"><span id="">15</span>% OFF</h1>
+
+                        <p class="font-inter text-xl font-semibold">on your next purchase</p>
+                        <p>use by January 2024</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="220" viewBox="0 0 48 220" fill="none">
+                        <path
+                            d="M2.09815e-06 -3.81596e-07C1.82261e-06 3.15172 0.620775 6.27259 1.82689 9.1844C3.033 12.0962 4.80083 14.742 7.02943 16.9706C9.25804 19.1992 11.9038 20.967 14.8156 22.1731C17.7274 23.3792 20.8483 24 24 24C27.1517 24 30.2726 23.3792 33.1844 22.1731C36.0962 20.967 38.742 19.1992 40.9706 16.9706C43.1992 14.742 44.967 12.0962 46.1731 9.1844C47.3792 6.27259 48 3.15173 48 1.90735e-06L2.09815e-06 -3.81596e-07Z"
+                            fill="white" />
+                        <path
+                            d="M48 220C48 216.848 47.3792 213.727 46.1731 210.815C44.967 207.904 43.1992 205.258 40.9706 203.029C38.742 200.801 36.0962 199.033 33.1844 197.827C30.2726 196.621 27.1517 196 24 196C20.8483 196 17.7274 196.621 14.8156 197.827C11.9038 199.033 9.25804 200.801 7.02944 203.029C4.80083 205.258 3.033 207.904 1.82689 210.815C0.620778 213.727 -2.75532e-07 216.848 0 220L48 220Z"
+                            fill="white" />
+                        <line x1="25" y1="32" x2="25" y2="188" stroke="white" stroke-width="2" stroke-dasharray="5 5" />
+                    </svg>
+                    <div class="font-relway text-center">
+                        <!-- Things to do with coupon -->
+                        <h1 class="text-3xl font-bold" id="">Couple 20</h1>
+                        <p>Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mt-14 p-3 bg-[#1DD1001A] text-[#1DD100] bg-white text-xl rounded-xl font-bold border-[#1DD10066] border-2">Buy Tickets </button>
         </section>
     </main>
     <footer>

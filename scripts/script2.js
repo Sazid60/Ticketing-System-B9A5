@@ -22,19 +22,17 @@ const targetElements = document.getElementsByClassName('seats');
 
 for (const element of targetElements) {
     element.addEventListener('click', function handleSelect() {
-        element.disabled = true;
-        console.log(element)
-        // element.classList.add('disable');
         count++;
+        setElementText('seat-count', count);
         //Stop After4 click
         if (count > 4) {
             alert('You cannot buy more than 4 tickets');
             return;
         }
-        setElementText('seat-count', count);
-        element.style.backgroundColor = "#1DD100";
-        element.style.color = "white";
-        
+
+        this.style.backgroundColor = "#1DD100";
+        this.style.color = "white";
+        this.classList.add('disable');
         const seatDeductedValue = getElementValue('seat-deduct') - 1;
         console.log(seatDeductedValue);
         setElementText('seat-deduct', seatDeductedValue);

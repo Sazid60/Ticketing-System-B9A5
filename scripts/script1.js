@@ -17,24 +17,21 @@ function setElementText(elementId, value) {
 }
 
 // ______________________________________________Main Functionality_____________________________________
-let count = 0;
+let count = 0; // Flag to control whether clicks should be handled
 const targetElements = document.getElementsByClassName('seats');
 
 for (const element of targetElements) {
-    element.addEventListener('click', function handleSelect() {
-        element.disabled = true;
-        console.log(element)
-        // element.classList.add('disable');
+    element.addEventListener('click', function seatClickHandler() {
         count++;
-        //Stop After4 click
-        if (count > 4) {
+        setElementText('seat-count', count);
+        const clickedCount = getElementValue('seat-count');
+        if (clickedCount > 4) {
             alert('You cannot buy more than 4 tickets');
             return;
         }
-        setElementText('seat-count', count);
-        element.style.backgroundColor = "#1DD100";
-        element.style.color = "white";
-        
+        this.style.backgroundColor = "#1DD100";
+        this.style.color = "white";
+        this.classList.add('disable');
         const seatDeductedValue = getElementValue('seat-deduct') - 1;
         console.log(seatDeductedValue);
         setElementText('seat-deduct', seatDeductedValue);
@@ -48,7 +45,7 @@ for (const element of targetElements) {
         p1.innerText = this.innerText;
         console.log(p1.innerText);
 
-        const p2 = document.createElement('p');
+        const p2 = document.createElement('li');
         p2.innerText = 'Economy Class';
 
         const p3 = document.createElement('p');

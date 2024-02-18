@@ -145,8 +145,7 @@
             </div>
 
             <button
-                class="mt-14 p-3 bg-[#1DD1001A] text-[#1DD100] bg-white text-xl rounded-xl font-bold border-[#1DD10066] border-2">Buy
-                Tickets </button>
+                class="mt-14 p-3 bg-[#1DD1001A] text-[#1DD100] bg-white text-xl rounded-xl font-bold border-[#1DD10066] border-2">Show All Offers</button>
         </section>
 
         <!-- Unit Price and route section -->
@@ -498,8 +497,8 @@
                         </label>
                         <label class="text-[16px] font-bold">
                             Phone Number*
-                            <input type="tel" class="input input-bordered w-full mt-4 mb-6 py-8 font-medium" name=""
-                                id="" placeholder="Enter your phone number">
+                            <input type="text" class="input input-bordered w-full mt-4 mb-6 py-8 font-medium" name=""
+                                id="number-input" placeholder="Enter your phone number">
                         </label>
                         <label class="text-[16px] font-bold">
                             Email Id
@@ -507,7 +506,7 @@
                                 id="" placeholder="Enter your email id">
                         </label>
 
-                        <button class="btn w-full bg-[#1DD100] text-white" disabled
+                        <button id ="next-btn" class="btn w-full bg-[#1DD100] text-white" disabled
                             onclick="my_modal_1.showModal()">Next
                         </button>
                         <dialog id="my_modal_1" class="modal">

@@ -25,6 +25,8 @@ function getCouponCode(elementId) {
     return TextUpperCase;
 }
 
+
+
 // ______________________________________________Main Functionality_____________________________________
 let count = 0;
 let currentPrice = 0;
@@ -44,12 +46,13 @@ for (const element of targetElements) {
             document.getElementById('input-field').disabled = false;
 
         }
+
         setElementText('seat-count', count);
         element.style.backgroundColor = "#1DD100";
         element.style.color = "white";
 
         const seatDeductedValue = getElementValue('seat-deduct') - 1;
-        console.log(seatDeductedValue);
+        // console.log(seatDeductedValue);
         setElementText('seat-deduct', seatDeductedValue);
 
         // Appending 
@@ -59,7 +62,7 @@ for (const element of targetElements) {
 
         const p1 = document.createElement('p');
         p1.innerText = this.innerText;
-        console.log(p1.innerText);
+        // console.log(p1.innerText);
 
         const p2 = document.createElement('p');
         p2.innerText = 'Economy Class';
@@ -73,13 +76,27 @@ for (const element of targetElements) {
 
         // total setting
         currentPrice = getElementValue('per-seat-price') + currentPrice;
-        console.log(currentPrice);
+        // console.log(currentPrice);
         setElementText('total-price', currentPrice)
         setElementText('grand-total-price', currentPrice)
 
 
+        const inputNumber = document.getElementById('number-input')
+        const seatSelected = getElementValue('seat-count')
+        console.log(seatSelected)
 
-    });
+        inputNumber.addEventListener('keyup', function (event) {
+            const inputNumberValue = parseInt(event.target.value);
+            console.log(inputNumberValue)
+            console.log(typeof inputNumberValue)
+
+            if (seatSelected >= 1 && typeof inputNumberValue === 'number') {
+                document.getElementById('next-btn').disabled = false;
+            }
+            
+        });
+    })
+
 }
 
 const btn = document.getElementById('apply-btn');
@@ -88,28 +105,32 @@ btn.addEventListener('click', function () {
     const couponInputFiled = document.getElementById('input-field');
     const inputCoupon = couponInputFiled.value.toUpperCase();
     // console.log(inputCoupon);
-        const firstCoupon = getCouponCode('coupon-code-1')
-        const secondCoupon = getCouponCode('coupon-code-2')
+    const firstCoupon = getCouponCode('coupon-code-1')
+    const secondCoupon = getCouponCode('coupon-code-2')
 
     if (inputCoupon === firstCoupon) {
         const grandTotalInitial = getElementValue('grand-total-price');
         const discountPrice = grandTotalInitial * 0.15
         // console.log(discountPrice)
         const discountedGrandTotal = grandTotalInitial - discountPrice;
-        console.log(discountedGrandTotal);
+        // console.log(discountedGrandTotal);
         setElementText('grand-total-price', discountedGrandTotal);
-        document.getElementById('apply-btn').classList.add('hidden')
-        document.getElementById('input-field').classList.add('hidden')
+        // document.getElementById('apply-btn').classList.add('hidden')
+        // document.getElementById('input-field').classList.add('hidden')
+        document.getElementById('apply-btn').disabled = true;
+        document.getElementById('input-field').disabled = true;
 
         const discountContainer = document.getElementById('discount-container')
-    
+
         const text1 = document.createElement('h1');
         text1.innerText = 'Discount';
         const text2 = document.createElement('h1');
-        text2.innerText = discountPrice ;
+        text2.innerText = discountPrice + ' ' + 'BDT';
 
         discountContainer.appendChild(text1)
         discountContainer.appendChild(text2)
+
+        document.getElementById('input-field').value = '';
     }
 
     if (inputCoupon === secondCoupon) {
@@ -117,19 +138,24 @@ btn.addEventListener('click', function () {
         const discountPrice = grandTotalInitial * 0.20
         // console.log(discountPrice)
         const discountedGrandTotal = grandTotalInitial - discountPrice;
-        console.log(discountedGrandTotal);
+        // console.log(discountedGrandTotal);
         setElementText('grand-total-price', discountedGrandTotal);
-        document.getElementById('apply-btn').classList.add('hidden')
-        document.getElementById('input-field').classList.add('hidden')
+        // document.getElementById('apply-btn').classList.add('hidden')
+        // document.getElementById('input-field').classList.add('hidden')
+        document.getElementById('apply-btn').disabled = true;
+        document.getElementById('input-field').disabled = true;
 
         const discountContainer = document.getElementById('discount-container')
-    
+
         const text1 = document.createElement('h1');
         text1.innerText = 'Discount';
         const text2 = document.createElement('h1');
-        text2.innerText = discountPrice ;
+        text2.innerText = discountPrice + ' ' + 'BDT';
 
         discountContainer.appendChild(text1)
         discountContainer.appendChild(text2)
+        document.getElementById('input-field').value = '';
     }
 })
+
+

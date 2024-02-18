@@ -23,8 +23,6 @@ const targetElements = document.getElementsByClassName('seats');
 for (const element of targetElements) {
     element.addEventListener('click', function handleSelect() {
         element.disabled = true;
-        console.log(element)
-        // element.classList.add('disable');
         count++;
         //Stop After4 click
         if (count > 4) {

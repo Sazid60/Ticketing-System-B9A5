@@ -34,16 +34,36 @@ function handleSelect(event) {
     console.log(seatDeductedValue)
     setElementText('seat-deduct', seatDeductedValue)
 
+    // Appending 
+    const containerDiv1 = document.getElementById('container-div-1');
+    const containerDiv2 = document.getElementById('container-div-2');
+    const containerDiv3 = document.getElementById('container-div-3');
+
+    const p1 = document.createElement('p');
+    p1.innerText = element.innerText;
+    console.log(p1.innerText);
+
+    const p2 = document.createElement('li');
+    p2.innerText = 'Economy Class';
+
+    const p3 = document.createElement('p');
+    p3.innerText = getElementValue('per-seat-price');
+
+    containerDiv1.appendChild(p1)
+    containerDiv2.appendChild(p2)
+    containerDiv3.appendChild(p3)
+
+
 
     // button disable after 4 click
     const clickedCount = getElementValue('seat-count')
-
     if (clickedCount >= 4) {
         alert('You cannot buy more than 4 tickets');
         for (const element of targetElements) {
             element.removeEventListener('click', handleSelect);
         }
     }
+
 }
 
 

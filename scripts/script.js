@@ -86,14 +86,16 @@ for (const element of targetElements) {
         console.log(seatSelected)
 
         inputNumber.addEventListener('keyup', function (event) {
-            const inputNumberValue = parseInt(event.target.value);
+            const inputNumberValue = event.target.value;
             console.log(inputNumberValue)
             console.log(typeof inputNumberValue)
 
-            if (seatSelected >= 1 && typeof inputNumberValue === 'number') {
+            if (inputNumberValue !== '' && !isNaN(inputNumberValue) && seatSelected >= 1) {
                 document.getElementById('next-btn').disabled = false;
             }
-            
+            else{
+                document.getElementById('next-btn').disabled = true;
+            }
         });
     })
 

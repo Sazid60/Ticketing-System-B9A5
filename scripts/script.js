@@ -87,14 +87,17 @@ for (const element of targetElements) {
         // console.log(seatSelected)
 
         inputNumber.addEventListener('keyup', function (event) {
-            const inputNumberValue = event.target.value;
+            let inputNumberValue = event.target.value;
             // console.log(inputNumberValue)
             // console.log(typeof inputNumberValue)
-            let pressCount = 0;
             if (inputNumberValue !== '' && !isNaN(inputNumberValue) && seatSelected >= 1) {
                 document.getElementById('next-btn').disabled = false;
+                document.getElementById('next-btn').addEventListener('click', function () {
+                    document.getElementById('number-input').value = '';
+                    document.getElementById('next-btn').disabled = true;
+                })
             }
-            else{
+            else {
                 document.getElementById('next-btn').disabled = true;
             }
 
@@ -129,7 +132,7 @@ btn.addEventListener('click', function () {
         const text1 = document.createElement('h1');
         text1.innerText = 'Discount';
         const text2 = document.createElement('h1');
-        text2.innerText =  'BDT' + ' ' + discountPrice ;
+        text2.innerText = 'BDT' + ' ' + discountPrice;
 
         discountContainer.appendChild(text1)
         discountContainer.appendChild(text2)
@@ -161,11 +164,11 @@ btn.addEventListener('click', function () {
         document.getElementById('input-field').value = '';
     }
 
-    if(inputCoupon !== firstCoupon && inputCoupon !== secondCoupon){
+    if (inputCoupon !== firstCoupon && inputCoupon !== secondCoupon) {
         alert('Wrong Coupon Code ! Please Enter "NEW15" OR "Couple 20"')
         document.getElementById('apply-btn').disabled = false;
         document.getElementById('input-field').disabled = false;
-        
+
         document.getElementById('apply-btn').style.backgroundColor = "#1DD100";
         document.getElementById('input-field').style.color = "red";
 

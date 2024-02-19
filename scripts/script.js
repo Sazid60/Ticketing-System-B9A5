@@ -84,19 +84,20 @@ for (const element of targetElements) {
 
         const inputNumber = document.getElementById('number-input')
         const seatSelected = getElementValue('seat-count')
-        console.log(seatSelected)
+        // console.log(seatSelected)
 
         inputNumber.addEventListener('keyup', function (event) {
             const inputNumberValue = event.target.value;
             console.log(inputNumberValue)
             console.log(typeof inputNumberValue)
-
+            let pressCount = 0;
             if (inputNumberValue !== '' && !isNaN(inputNumberValue) && seatSelected >= 1) {
                 document.getElementById('next-btn').disabled = false;
             }
             else{
                 document.getElementById('next-btn').disabled = true;
             }
+
         });
     })
 

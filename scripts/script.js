@@ -38,10 +38,11 @@ for (const element of targetElements) {
         count++;
         //Stop After4 click
         if (count > 4) {
-            alert('You cannot buy more than 4 tickets');
+            alert('You Are Not Allowed Buy More Than 4 Tickets');
             return;
         }
         if (count === 4) {
+            alert('You Have Bought Maximum Number Tickets');
             document.getElementById('apply-btn').disabled = false;
             document.getElementById('input-field').disabled = false;
 
@@ -158,8 +159,9 @@ btn.addEventListener('click', function () {
         discountContainer.appendChild(text2)
         document.getElementById('input-field').value = '';
     }
+
     if(inputCoupon !== firstCoupon && inputCoupon !== secondCoupon){
-        alert('Wrong Coupon Code Please Enter "NEW15" OR "Couple 20"')
+        alert('Wrong Coupon Code ! Please Enter "NEW15" OR "Couple 20"')
         document.getElementById('apply-btn').disabled = false;
         document.getElementById('input-field').disabled = false;
         

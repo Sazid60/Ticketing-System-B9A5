@@ -88,8 +88,8 @@ for (const element of targetElements) {
 
         inputNumber.addEventListener('keyup', function (event) {
             const inputNumberValue = event.target.value;
-            console.log(inputNumberValue)
-            console.log(typeof inputNumberValue)
+            // console.log(inputNumberValue)
+            // console.log(typeof inputNumberValue)
             let pressCount = 0;
             if (inputNumberValue !== '' && !isNaN(inputNumberValue) && seatSelected >= 1) {
                 document.getElementById('next-btn').disabled = false;

@@ -117,10 +117,10 @@ btn.addEventListener('click', function () {
         const discountedGrandTotal = grandTotalInitial - discountPrice;
         // console.log(discountedGrandTotal);
         setElementText('grand-total-price', discountedGrandTotal);
-        // document.getElementById('apply-btn').classList.add('hidden')
-        // document.getElementById('input-field').classList.add('hidden')
-        document.getElementById('apply-btn').disabled = true;
-        document.getElementById('input-field').disabled = true;
+        document.getElementById('apply-btn').classList.add('hidden')
+        document.getElementById('input-field').classList.add('hidden')
+        // document.getElementById('apply-btn').disabled = true;
+        // document.getElementById('input-field').disabled = true;
 
         const discountContainer = document.getElementById('discount-container')
 
@@ -142,10 +142,10 @@ btn.addEventListener('click', function () {
         const discountedGrandTotal = grandTotalInitial - discountPrice;
         // console.log(discountedGrandTotal);
         setElementText('grand-total-price', discountedGrandTotal);
-        // document.getElementById('apply-btn').classList.add('hidden')
-        // document.getElementById('input-field').classList.add('hidden')
-        document.getElementById('apply-btn').disabled = true;
-        document.getElementById('input-field').disabled = true;
+        document.getElementById('apply-btn').classList.add('hidden')
+        document.getElementById('input-field').classList.add('hidden')
+        // document.getElementById('apply-btn').disabled = true;
+        // document.getElementById('input-field').disabled = true;
 
         const discountContainer = document.getElementById('discount-container')
 
@@ -157,6 +157,12 @@ btn.addEventListener('click', function () {
         discountContainer.appendChild(text1)
         discountContainer.appendChild(text2)
         document.getElementById('input-field').value = '';
+    }
+    
+    if(inputCoupon !== firstCoupon && inputCoupon !== secondCoupon){
+        alert('Wrong Coupon Code !')
+        document.getElementById('apply-btn').disabled = false;
+        document.getElementById('input-field').disabled = false;
     }
 })
 

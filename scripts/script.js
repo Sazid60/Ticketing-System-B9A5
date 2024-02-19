@@ -127,7 +127,7 @@ btn.addEventListener('click', function () {
         const text1 = document.createElement('h1');
         text1.innerText = 'Discount';
         const text2 = document.createElement('h1');
-        text2.innerText = discountPrice + ' ' + 'BDT';
+        text2.innerText =  'BDT' + ' ' + discountPrice ;
 
         discountContainer.appendChild(text1)
         discountContainer.appendChild(text2)
@@ -158,11 +158,14 @@ btn.addEventListener('click', function () {
         discountContainer.appendChild(text2)
         document.getElementById('input-field').value = '';
     }
-    
     if(inputCoupon !== firstCoupon && inputCoupon !== secondCoupon){
-        alert('Wrong Coupon Code !')
+        alert('Wrong Coupon Code Please Enter "NEW15" OR "Couple 20"')
         document.getElementById('apply-btn').disabled = false;
         document.getElementById('input-field').disabled = false;
+        
+        document.getElementById('apply-btn').style.backgroundColor = "#1DD100";
+        document.getElementById('input-field').style.color = "red";
+
     }
 })
 
